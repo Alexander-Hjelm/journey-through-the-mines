@@ -2,6 +2,10 @@ extends RigidBody2D
 class_name Actor # Needed for inheritance
 
 export(PackedScene) var projectile
+export(PackedScene) var deathFX
+export(PackedScene) var hitFX
+export var has_create_deathFX_instance = false
+export var has_create_hitFX_instance = false
 export(String) var tag
 
 export var attack_interval = 1.0
@@ -18,6 +22,7 @@ var _armor : Item
 var _boots : Item
 
 var animated_sprite
+
 
 var is_dead = false
 
@@ -85,7 +90,10 @@ func attack(target_pos):
 			$SwordSFX._play_random_sfx()
 	
 func apply_damage(damage):
-	
+	if has_create_hitFX_instance:
+		var hitFX_instance = hitFX.instance()
+		hitFX_instance.position = position
+		get_tree().get_root().add_child(hitFX_instance)
 	# Calculate damage
 	var def_modifer = defense_modifier
 	if _weapon != null:
@@ -102,6 +110,11 @@ func apply_damage(damage):
 		_die()
 	
 func _die():
+	is_dead = true
+	if has_create_deathFX_instance:
+		var deathFX_instance = deathFX.instance()
+		deathFX_instance.position = position
+		get_tree().get_root().add_child(deathFX_instance)
 	queue_free()
 
 func set_armor(armor : Item):

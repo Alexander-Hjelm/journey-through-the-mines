@@ -10,5 +10,6 @@ func _ready():
 	_max_hp = _actor.max_hp
 
 func _process(delta):
-	var hp = _actor.hp
-	value = (hp/_max_hp)
+	if is_instance_valid(_actor):
+		var hp = _actor.hp
+		value = (hp/_max_hp)

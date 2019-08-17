@@ -19,4 +19,3 @@ func _process(delta):
 		attack(get_global_mouse_position())
 	
 	set_velocity(vx, vy)
-

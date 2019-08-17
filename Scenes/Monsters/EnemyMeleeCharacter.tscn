@@ -1,25 +1,26 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Projectile/SlashProjectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Monsters/DeathParticles.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Projectile/EnemySlash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Monsters/DeathParticles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_01.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_02.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_03.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 7.78809
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -41,7 +42,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=5]
 resource_name = "death"
 tracks/0/type = "value"
 tracks/0/path = NodePath("DeathParticles:amount")
@@ -118,7 +119,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=6]
 resource_name = "hit"
 tracks/0/type = "value"
 tracks/0/path = NodePath("DeathParticles:emitting")
@@ -173,9 +174,11 @@ tracks/3/keys = {
 
 [node name="EnemyCharacter" type="RigidBody2D"]
 collision_layer = 4
+collision_mask = 7
 mode = 2
 script = ExtResource( 1 )
 projectile = ExtResource( 2 )
+deathFX = ExtResource( 3 )
 tag = "Enemy"
 speed = 30.0
 
@@ -206,14 +209,15 @@ custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 max_value = 1.0
 percent_visible = false
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _actor_path = "../.."
 
-[node name="DeathParticles" parent="." instance=ExtResource( 5 )]
+[node name="DeathParticles" parent="." instance=ExtResource( 3 )]
+local_coords = false
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 10 )
-anims/hit = SubResource( 11 )
+anims/death = SubResource( 5 )
+anims/hit = SubResource( 6 )
 
 [node name="MonsterSFX" parent="." instance=ExtResource( 6 )]
 sfx_1 = ExtResource( 7 )
