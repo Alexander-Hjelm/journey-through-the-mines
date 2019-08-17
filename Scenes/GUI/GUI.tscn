@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GoldLabel.gd" type="Script" id=2]
@@ -12,6 +12,13 @@ border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 bg_color = Color( 0.807843, 0, 0, 1 )
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://GFX/JMH Beda.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 42
+font_data = SubResource( 4 )
+
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 18, 82, 12, 12 )
@@ -21,8 +28,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-margin_right = 100.0
-margin_bottom = 14.0
+margin_left = 10.1785
+margin_top = 8.98104
+margin_right = 210.179
+margin_bottom = 36.981
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 custom_colors/font_color = Color( 0, 1, 0.0392157, 1 )
@@ -30,20 +39,22 @@ custom_colors/font_color_shadow = Color( 0.0980392, 0.666667, 0, 1 )
 max_value = 1.0
 percent_visible = false
 script = ExtResource( 1 )
-_actor_path = "../../Player"
+_actor_path = "../../../Player"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 130.0
-margin_right = 173.0
-margin_bottom = 14.0
+margin_left = 292.72
+margin_top = 5.60917
+margin_right = 372.72
+margin_bottom = 54.6092
 rect_pivot_offset = Vector2( 19.0359, 7.46178 )
+custom_fonts/font = SubResource( 5 )
 text = "<gold>"
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 107.277
-margin_top = -2.38393
-margin_right = 127.277
-margin_bottom = 17.6161
+margin_left = 244.935
+margin_top = 13.1832
+margin_right = 284.935
+margin_bottom = 53.1832
 texture = SubResource( 3 )
 expand = true
