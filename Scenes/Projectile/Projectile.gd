@@ -11,6 +11,8 @@ var _start_time : float
 func _ready():
 	_start_time = Utils.get_time_seconds()
 	get_node("Area2D").connect("body_entered", self, "_on_body_entered")
+	if has_node("AnimatedSprite"):
+		get_node("AnimatedSprite").play("default")
 
 func _process(delta):
 	if Utils.get_time_seconds() - _start_time > _time_to_live:
