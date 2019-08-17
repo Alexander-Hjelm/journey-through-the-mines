@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GUI/WinWindow.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/GoldLabel.gd" type="Script" id=5]
 [ext_resource path="res://GFX/Placeholder/RPG Items/rpgItems.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Placeholder/item_box.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/GUI/hurt_overlay.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.235294, 0.819608, 0, 1 )
@@ -30,6 +31,8 @@ region = Rect2( 18, 82, 12, 12 )
 [node name="GUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
 script = ExtResource( 1 )
 win_menu = ExtResource( 2 )
 lose_menu = ExtResource( 3 )
@@ -104,3 +107,47 @@ margin_top = -104.0
 margin_right = 1775.0
 margin_bottom = 107.0
 expand = true
+
+[node name="HurtOverlay" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HurtOverlay"]
+
+[node name="TextureRect" type="TextureRect" parent="HurtOverlay/CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -480.0
+margin_top = -480.0
+rect_pivot_offset = Vector2( 477.062, 482.189 )
+texture = ExtResource( 8 )
+
+[node name="TextureRect2" type="TextureRect" parent="HurtOverlay/CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 477.775
+margin_top = -482.051
+margin_right = 957.775
+margin_bottom = -2.05054
+rect_rotation = 90.0
+texture = ExtResource( 8 )
+
+[node name="TextureRect3" type="TextureRect" parent="HurtOverlay/CanvasLayer"]
+margin_left = 475.725
+margin_top = 473.674
+margin_right = 955.725
+margin_bottom = 953.674
+rect_rotation = 180.0
+texture = ExtResource( 8 )
+
+[node name="TextureRect4" type="TextureRect" parent="HurtOverlay/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 547.494
+margin_top = 475.725
+margin_right = 547.494
+margin_bottom = 475.725
+rect_rotation = 270.0
+texture = ExtResource( 8 )

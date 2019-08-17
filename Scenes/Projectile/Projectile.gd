@@ -2,6 +2,8 @@ class_name Projectile extends Node2D
 
 export(float) var _time_to_live
 
+export(bool) var _destroy_on_hit
+
 var _tag : String
 var _damage : float
 var _start_time : float
@@ -25,3 +27,5 @@ func _on_body_entered(body: Node):
 		if body.get("tag") != null and body.tag == _tag:
 			return
 		body.apply_damage(_damage)
+		if _destroy_on_hit:
+			queue_free()
