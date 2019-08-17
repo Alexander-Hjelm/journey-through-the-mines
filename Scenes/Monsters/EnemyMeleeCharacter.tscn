@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/EnemySlash.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_01.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_02.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_03.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.78809
@@ -23,6 +24,21 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "walkUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "walkDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "walkSide",
 "speed": 5.0
 } ]
 
@@ -42,19 +58,19 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=5]
 colors = PoolColorArray( 0.699219, 0, 0, 1, 0.686275, 0.133333, 0.133333, 0 )
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 0.4758 ), 0.0, 0.0, 0, 0, Vector2( 0.286654, 1 ), -0.453054, -0.453054, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=9]
 emission_shape = 1
 emission_sphere_radius = 1.0
 flag_disable_z = true
@@ -70,8 +86,8 @@ angle = 360.0
 angle_random = 1.0
 scale = 0.2
 scale_random = 0.01
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 7 )
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
 hue_variation = 0.08
 hue_variation_random = 1.0
 
@@ -218,7 +234,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
-animation = "walk"
+animation = "walkSide"
 
 [node name="Control" type="Control" parent="."]
 editor/display_folded = true
@@ -247,7 +263,7 @@ emitting = false
 one_shot = true
 explosiveness = 1.0
 local_coords = false
-process_material = SubResource( 5 )
+process_material = SubResource( 9 )
 texture = ExtResource( 5 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -258,3 +274,5 @@ anims/hit = SubResource( 11 )
 sfx_1 = ExtResource( 7 )
 sfx_2 = ExtResource( 8 )
 sfx_3 = ExtResource( 9 )
+
+[node name="StandardCharLight" parent="." instance=ExtResource( 10 )]

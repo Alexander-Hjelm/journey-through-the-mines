@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Utilities/Exit_Scene.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 24 )
@@ -12,6 +13,7 @@ position = Vector2( -16, 304 )
 collision_layer = 16
 collision_mask = 2
 script = ExtResource( 1 )
+is_activated = false
 
 [node name="DoorOpen" type="Polygon2D" parent="."]
 visible = false
@@ -20,6 +22,8 @@ color = Color( 1, 0.890196, 0.65098, 0.196078 )
 polygon = PoolVector2Array( 0, -32, 16, -32, 16, 16, 0, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 24, 8 )
 shape = SubResource( 1 )
+
+[node name="StandardCharLight" parent="." instance=ExtResource( 2 )]
+enabled = false
