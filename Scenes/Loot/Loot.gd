@@ -6,10 +6,11 @@ enum loot_type{GOLD}
 
 onready var anim = $Anim
 
-func _ready():
-	connect("body_entered", self, "collect_gold")
-
 
 func collect_gold():
 	Global.player_gold += gold_amount
 	anim.play("CollectGold")
+
+
+func _on_GoldLoot_body_entered(body):
+	collect_gold()

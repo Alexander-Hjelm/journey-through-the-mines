@@ -213,13 +213,11 @@ anims/start = SubResource( 2 )
 
 [node name="LootGlitter" type="Particles2D" parent="."]
 modulate = Color( 1, 0.92549, 0.427451, 1 )
-emitting = false
-amount = 15
-one_shot = true
-explosiveness = 1.0
+amount = 5
 local_coords = false
 process_material = SubResource( 5 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="." to="." method="_on_GoldLoot_body_entered"]
