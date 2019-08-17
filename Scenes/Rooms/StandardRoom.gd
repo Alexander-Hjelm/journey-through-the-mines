@@ -21,6 +21,7 @@ func check_enemy_amount():
 	monster_count -= 1
 	if monster_count <= 0:
 		get_tree().call_group("exits","activate_exit")
+		
 
 
 func set_player_entrance_position():
