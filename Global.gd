@@ -1,7 +1,7 @@
 extends Node
 
 var player
-var player_health
-var player_gold
+var player_health : int
+var player_gold : int
 
 var level_entrance
