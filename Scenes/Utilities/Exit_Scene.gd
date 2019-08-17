@@ -24,7 +24,8 @@ func _ready():
 func _on_Exit_Scene_body_entered(body):
 	if is_activated:
 		Global.level_entrance = entrance_id
-		SceneChanger.change_scene(scene_change,1.0)
+		SceneChanger.change_scene(scene_change,1.5)
+		$ExitSound.play("exitSounds")
 #		match Global.current_act:
 #			Global.acts.ACT_0: 
 #				SceneChanger.change_scene(scene_change)

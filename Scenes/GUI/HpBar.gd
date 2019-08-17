@@ -7,6 +7,7 @@ var _max_hp : float
 
 func _ready():
 	_actor = get_node(_actor_path)
+	print(_actor)
 	_max_hp = _actor.max_hp
 
 func _process(delta):

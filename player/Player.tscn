@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/PlayerSlash.tscn" type="PackedScene" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_03.wav" type="AudioStream" id=21]
 [ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_04.wav" type="AudioStream" id=22]
 [ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=23]
+[ext_resource path="res://ShakableCamera.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/GUI/GUI.tscn" type="PackedScene" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -74,7 +76,6 @@ speed = 40.0
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "walkDown"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -93,3 +94,17 @@ random_sfx_to_play = 4
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.4, 0.4 )
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 1024
+script = ExtResource( 24 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 25 )]
+
+[node name="ProgressBar" parent="CanvasLayer/GUI" index="0"]
+_actor_path = "../../.."
+
+[editable path="CanvasLayer/GUI"]
