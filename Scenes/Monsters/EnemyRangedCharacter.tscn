@@ -1,15 +1,50 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/ArrowProjectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Monsters/DeathParticles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GFX/Placeholder/FX/BigExploBlobs00000.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Monsters/EnemyAnim.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_01.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_02.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_03.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.30422
+
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 0.699219, 0, 0, 1, 0.686275, 0.133333, 0.133333, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0.4758 ), 0.0, 0.0, 0, 0, Vector2( 0.286654, 1 ), -0.453054, -0.453054, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 1.02099e-008
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 40.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.2
+scale_random = 0.01
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 7 )
+hue_variation = 0.08
+hue_variation_random = 1.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -40,19 +75,157 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
+[sub_resource type="Animation" id=10]
+resource_name = "death"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DeathParticles:amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 20 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DeathParticles:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeathParticles:process_material:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.3 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "hit"
+tracks/0/type = "method"
+tracks/0/path = NodePath("MonsterSFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_play_random_sfx"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DeathParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DeathParticles:amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DeathParticles:process_material:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.2 ]
+}
+
 [node name="EnemyCharacter" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 7
 mode = 2
 script = ExtResource( 1 )
 projectile = ExtResource( 2 )
-deathFX = ExtResource( 3 )
 tag = "Enemy"
 speed = 15.0
 attack_proximity = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="DeathParticles" type="Particles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
@@ -81,9 +254,11 @@ percent_visible = false
 script = ExtResource( 5 )
 _actor_path = "../.."
 
-[node name="anim" parent="." instance=ExtResource( 6 )]
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 10 )
+anims/hit = SubResource( 11 )
 
-[node name="MonsterSFX" parent="." instance=ExtResource( 7 )]
-
-[node name="DeathParticles" parent="." instance=ExtResource( 3 )]
-local_coords = false
+[node name="MonsterSFX" parent="." instance=ExtResource( 6 )]
+sfx_1 = ExtResource( 7 )
+sfx_2 = ExtResource( 8 )
+sfx_3 = ExtResource( 9 )

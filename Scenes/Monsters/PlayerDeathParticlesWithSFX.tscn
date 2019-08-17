@@ -86,6 +86,7 @@ emitting = false
 amount = 20
 one_shot = true
 explosiveness = 1.0
+local_coords = false
 process_material = SubResource( 5 )
 texture = ExtResource( 1 )
 

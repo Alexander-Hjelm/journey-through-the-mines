@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/EnemySlash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Monsters/DeathParticles.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=4]
+[ext_resource path="res://GFX/Placeholder/FX/BigExploBlobs00000.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_01.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_02.wav" type="AudioStream" id=8]
@@ -15,12 +15,12 @@ radius = 7.78809
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -42,8 +42,40 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "death"
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 0.699219, 0, 0, 1, 0.686275, 0.133333, 0.133333, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0.4758 ), 0.0, 0.0, 0, 0, Vector2( 0.286654, 1 ), -0.453054, -0.453054, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 1.02099e-008
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 40.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.2
+scale_random = 0.01
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 7 )
+hue_variation = 0.08
+hue_variation_random = 1.0
+
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("DeathParticles:amount")
 tracks/0/interp = 1
@@ -119,8 +151,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "hit"
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("DeathParticles:emitting")
 tracks/0/interp = 1
@@ -178,7 +209,6 @@ collision_mask = 7
 mode = 2
 script = ExtResource( 1 )
 projectile = ExtResource( 2 )
-deathFX = ExtResource( 3 )
 tag = "Enemy"
 speed = 30.0
 
@@ -209,15 +239,20 @@ custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 max_value = 1.0
 percent_visible = false
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 _actor_path = "../.."
 
-[node name="DeathParticles" parent="." instance=ExtResource( 3 )]
+[node name="DeathParticles" type="Particles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
 local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 5 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 5 )
-anims/hit = SubResource( 6 )
+anims/death = SubResource( 10 )
+anims/hit = SubResource( 11 )
 
 [node name="MonsterSFX" parent="." instance=ExtResource( 6 )]
 sfx_1 = ExtResource( 7 )

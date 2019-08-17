@@ -6,6 +6,8 @@ enum loot_type{GOLD}
 
 onready var anim = $Anim
 
+var collected = false
+
 
 func collect_gold():
 	Global.player_gold += gold_amount
@@ -13,4 +15,6 @@ func collect_gold():
 
 
 func _on_GoldLoot_body_entered(body):
-	collect_gold()
+	if !collected:
+		collected = true
+		collect_gold()
