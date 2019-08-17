@@ -29,6 +29,7 @@ gravity_scale = 0.0
 script = ExtResource( 1 )
 projectile = ExtResource( 2 )
 tag = "Player"
+attack_interval = 0.2
 speed = 40.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
