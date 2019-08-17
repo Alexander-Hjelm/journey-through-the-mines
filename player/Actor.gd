@@ -43,6 +43,8 @@ func attack(target_pos):
 		projectile_instance.set_tag(tag)
 		projectile_instance.set_damage(dmg)
 		_last_attack_time = Utils.get_time_seconds()
+		if has_node("SwordSFX"):
+			$SwordSFX._play_random_sfx()
 	
 func apply_damage(dmg):
 	hp -= dmg

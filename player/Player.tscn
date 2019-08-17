@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://projectile/SlashProjectile.tscn" type="PackedScene" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://player/player_idle_2.png" type="Texture" id=4]
 [ext_resource path="res://player/player_walk_1.png" type="Texture" id=5]
 [ext_resource path="res://player/player_walk_2.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_01.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_02.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_03.wav" type="AudioStream" id=10]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_04.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -35,8 +40,14 @@ speed = 40.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="SwordSFX" parent="." instance=ExtResource( 7 )]
+sfx_1 = ExtResource( 8 )
+sfx_2 = ExtResource( 9 )
+sfx_3 = ExtResource( 10 )
+sfx_4 = ExtResource( 11 )
+random_sfx_to_play = 4
