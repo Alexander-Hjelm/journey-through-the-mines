@@ -1,5 +1,7 @@
 extends "res://player/Actor.gd"
 
+signal monster_death
+
 export var activated = true
 export var knock_back = 250
 export var attack_proximity = 30.0
@@ -8,6 +10,10 @@ export (PackedScene) var health_loot = preload("res://Scenes/Loot/Loot.tscn")
 
 export var gold_loot_drop_chance = 0.75
 export var health_loot_drop_chance = 0.10
+
+func _ready():
+	connect("monster_death", Global.room_node,"check_enemy_amount")
+
 
 func _process(delta):
 	# Character movement
@@ -37,6 +43,7 @@ func apply_damage(dmg):
 
 
 func _die():
+	emit_signal("monster_death")
 	randomize()
 	var random_gold_number = rand_range(0.0,1.0)
 	if random_gold_number <= gold_loot_drop_chance:
