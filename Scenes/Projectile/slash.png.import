@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slash.png-3054f7f36b92fe7872c6c28b2e8cab52.stex"
+path="res://.import/slash.png-aa7cf22b6a533a98f515eba19da4d1a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://projectile/slash.png"
-dest_files=[ "res://.import/slash.png-3054f7f36b92fe7872c6c28b2e8cab52.stex" ]
+source_file="res://Scenes/Projectile/slash.png"
+dest_files=[ "res://.import/slash.png-aa7cf22b6a533a98f515eba19da4d1a6.stex" ]
 
 [params]
 

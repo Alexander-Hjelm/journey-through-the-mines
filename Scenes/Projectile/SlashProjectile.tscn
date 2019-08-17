@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://projectile/SlashProjectile.gd" type="Script" id=1]
-[ext_resource path="res://projectile/slash.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Projectile/SlashProjectile.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Projectile/slash.png" type="Texture" id=2]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.42948, 10 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
-[ext_resource path="res://projectile/SlashProjectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Projectile/SlashProjectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=4]
 [ext_resource path="res://GFX/Placeholder/FX/BigExploBlobs00000.png" type="Texture" id=5]
