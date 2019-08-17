@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/ArrowProjectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GFX/Placeholder/FX/BigExploBlobs00000.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Monsters/Goblin/GoblinSpriteFrames.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_01.wav" type="AudioStream" id=7]
@@ -47,35 +47,7 @@ color_ramp = SubResource( 3 )
 hue_variation = 0.08
 hue_variation_random = 1.0
 
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "walkUp",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "walkDown",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "walkSide",
-"speed": 12.0
-} ]
-
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.364706, 0.956863, 0, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -83,7 +55,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.760784, 0, 0, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -91,7 +63,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 resource_name = "death"
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
@@ -168,7 +140,7 @@ tracks/5/keys = {
 "values": [ 0.3 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 resource_name = "hit"
 tracks/0/type = "method"
 tracks/0/path = NodePath("MonsterSFX")
@@ -244,8 +216,8 @@ process_material = SubResource( 6 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 7 )
+scale = Vector2( 0.01, 0.01 )
+frames = ExtResource( 4 )
 animation = "walkDown"
 
 [node name="Control" type="Control" parent="."]
@@ -262,16 +234,16 @@ margin_top = -31.59
 margin_right = 72.84
 margin_bottom = -11.59
 rect_scale = Vector2( 0.15, 0.15 )
-custom_styles/fg = SubResource( 8 )
-custom_styles/bg = SubResource( 9 )
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
 max_value = 1.0
 percent_visible = false
 script = ExtResource( 5 )
 _actor_path = "../.."
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 10 )
-anims/hit = SubResource( 11 )
+anims/death = SubResource( 9 )
+anims/hit = SubResource( 10 )
 
 [node name="MonsterSFX" parent="." instance=ExtResource( 6 )]
 sfx_1 = ExtResource( 7 )

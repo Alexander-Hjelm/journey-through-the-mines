@@ -94,6 +94,10 @@ random_sfx_to_play = 4
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.4, 0.4 )
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 1024
 script = ExtResource( 24 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -78,5 +78,5 @@ shape = SubResource( 1 )
 
 [node name="ExitSFX" type="AudioStreamPlayer2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="ExitSound" type="AnimationPlayer" parent="."]
 anims/exitSounds = SubResource( 2 )
