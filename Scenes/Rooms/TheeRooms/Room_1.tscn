@@ -5,19 +5,19 @@
 
 [node name="Room_1" instance=ExtResource( 1 )]
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="4"]
 position = Vector2( 912, 352 )
 
-[node name="LevelExitTop" parent="." index="4"]
+[node name="LevelExitTop" parent="." index="5"]
 is_activated = false
 
-[node name="LevelExitBottom" parent="." index="5"]
+[node name="LevelExitBottom" parent="." index="6"]
 is_activated = false
 
-[node name="LevelExitSideLeft" parent="." index="6"]
+[node name="LevelExitSideLeft" parent="." index="7"]
 is_activated = false
 
-[node name="LevelExitSideRight" parent="." index="7"]
+[node name="LevelExitSideRight" parent="." index="8"]
 scene_change = "res://Scenes/Rooms/TheeRooms/Room_2.tscn"
 is_activated = false
 

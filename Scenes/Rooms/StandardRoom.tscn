@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StandardRoom.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Room Textures/Ground.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Rooms/LevelExit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Rooms/LevelExitSide.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Utilities/Exit_Scene.gd" type="Script" id=8]
+[ext_resource path="res://GFX/Placeholder/Lights/Nice_Light_01.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -207,3 +208,39 @@ position = Vector2( 80, 544 )
 color = Color( 0.678431, 0.678431, 0.678431, 1 )
 
 [node name="LightingNodes" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="LightingNodes"]
+position = Vector2( 80, 80 )
+texture = ExtResource( 9 )
+texture_scale = 6.0
+color = Color( 1, 0.854902, 0.419608, 1 )
+
+[node name="Light2D2" type="Light2D" parent="LightingNodes"]
+position = Vector2( 488, 80 )
+texture = ExtResource( 9 )
+texture_scale = 6.0
+color = Color( 1, 0.854902, 0.419608, 1 )
+
+[node name="Light2D3" type="Light2D" parent="LightingNodes"]
+position = Vector2( 928, 80 )
+texture = ExtResource( 9 )
+texture_scale = 6.0
+color = Color( 1, 0.854902, 0.419608, 1 )
+
+[node name="Light2D4" type="Light2D" parent="LightingNodes"]
+position = Vector2( 928, 458 )
+texture = ExtResource( 9 )
+texture_scale = 6.0
+color = Color( 1, 0.854902, 0.419608, 1 )
+
+[node name="Light2D5" type="Light2D" parent="LightingNodes"]
+position = Vector2( 488, 458 )
+texture = ExtResource( 9 )
+texture_scale = 6.0
+color = Color( 1, 0.854902, 0.419608, 1 )
+
+[node name="Light2D6" type="Light2D" parent="LightingNodes"]
+position = Vector2( 128, 458 )
+texture = ExtResource( 9 )
+texture_scale = 6.0
+color = Color( 1, 0.854902, 0.419608, 1 )
