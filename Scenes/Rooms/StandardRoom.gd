@@ -8,6 +8,8 @@ func _init():
 
 func _ready():
 	monster_count = $Enemies.get_child_count()
+	set_player_entrance_position()
+	check_enemy_amount()
 
 
 func _input(event):
