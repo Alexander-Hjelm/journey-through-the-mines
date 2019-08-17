@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Loot/Loot.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Placeholder/RPG Items/rpgItems.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Placeholder/Lights/Small_Particle_light.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GFX/Placeholder/Lights/Small_Particle_light.png" type="Texture" id=4]
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -34,11 +35,11 @@ region_rect = Rect2( 18, 82, 12, 12 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+[node name="RandomSFX" parent="." instance=ExtResource( 3 )]
 
 [node name="LootGlitter" type="Particles2D" parent="."]
 modulate = Color( 1, 0.92549, 0.427451, 1 )
 amount = 4
 local_coords = false
 process_material = SubResource( 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
