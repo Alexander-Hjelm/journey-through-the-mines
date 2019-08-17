@@ -10,6 +10,7 @@ export var hp = 3.0
 export var dmg = 1.0
 
 var _last_attack_time : float
+var max_hp : float = hp
 
 var animated_sprite
 
@@ -17,6 +18,7 @@ var animated_sprite
 func _ready():
 	animated_sprite = get_node("AnimatedSprite")
 	_last_attack_time = Utils.get_time_seconds()
+	max_hp = hp
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func set_velocity(vx, vy):

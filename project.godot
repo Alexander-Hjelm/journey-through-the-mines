@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="journey-through-the-mines"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
