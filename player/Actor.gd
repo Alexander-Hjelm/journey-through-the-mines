@@ -19,6 +19,8 @@ var _boots : Item
 
 var animated_sprite
 
+var is_dead = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animated_sprite = get_node("AnimatedSprite")
