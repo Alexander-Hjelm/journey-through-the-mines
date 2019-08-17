@@ -7,9 +7,10 @@
 extents = Vector2( 3.42948, 10 )
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 2, 1 )
+position = Vector2( -6, 1 )
 script = ExtResource( 1 )
 _time_to_live = 2.0
+_destroy_on_hit = true
 _speed = 1.5
 
 [node name="slash" type="Sprite" parent="."]

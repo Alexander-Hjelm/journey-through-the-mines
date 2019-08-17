@@ -34,12 +34,9 @@ func follow_and_attack_player():
 
 
 func apply_damage(dmg):
-	if !is_dead:
-		hp -= dmg
-		if hp <= 0:
-			_die()
-		else:
-			$anim.play("hit")
+	.apply_damage(dmg)
+	if !is_dead and hp > 0:
+		$anim.play("hit")
 
 
 func _die():

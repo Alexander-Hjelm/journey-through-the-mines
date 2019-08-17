@@ -9,3 +9,4 @@ var level_entrance
 var room_node
 
 var gui
+var camera

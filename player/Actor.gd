@@ -106,6 +106,12 @@ func apply_damage(damage):
 	var final_damage = damage * def_modifer
 	
 	hp -= final_damage
+	
+	if(tag == "Player"):
+		Global.gui.set_hurt_overlay_alpha(1.0)
+	
+	Global.camera.shake(0.5, 100.0, 1.0)
+	
 	if hp <= 0:
 		_die()
 	
