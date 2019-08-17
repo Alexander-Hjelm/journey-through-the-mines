@@ -83,4 +83,4 @@ _actor_path = "../.."
 [node name="MonsterSFX" parent="." instance=ExtResource( 6 )]
 
 [node name="DeathParticles" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2, 0 )
+position = Vector2( 2, -1 )
