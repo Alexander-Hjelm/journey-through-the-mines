@@ -4,14 +4,14 @@
 [ext_resource path="res://arrow.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.91403, 1.31161 )
+extents = Vector2( 3.42948, 10 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -6, 1 )
 script = ExtResource( 1 )
 _time_to_live = 2.0
 _destroy_on_hit = true
-_speed = 3.0
+_speed = 9001.0
 
 [node name="slash" type="Sprite" parent="."]
 position = Vector2( 6.86137, -1.4916 )

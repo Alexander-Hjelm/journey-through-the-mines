@@ -120,12 +120,19 @@ func apply_damage(damage):
 		_die()
 	
 func _die():
+	set_velocity(0.0,0.0)
 	is_dead = true
 	if has_create_deathFX_instance:
 		var deathFX_instance = deathFX.instance()
 		deathFX_instance.position = position
 		get_tree().get_root().add_child(deathFX_instance)
-	queue_free()
+	hide_that_shit()
+
+
+func hide_that_shit():
+	$AnimatedSprite.hide()
+	$CollisionShape2D.queue_free()
+
 
 func set_armor(armor : Item):
 	_armor = armor
