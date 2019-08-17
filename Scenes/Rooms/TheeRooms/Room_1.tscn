@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Rooms/StandardRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Monsters/EnemyCharacter.tscn" type="PackedScene" id=2]
+
+[node name="Room_1" index="0" instance=ExtResource( 1 )]
+
+[node name="EnemyCharacter" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 144, 96 )
+
+[node name="EnemyCharacter2" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 384, 272 )
+
+[node name="EnemyCharacter3" parent="Enemies" index="2" instance=ExtResource( 2 )]
+position = Vector2( 528, 176 )
+
+[node name="EnemyCharacter4" parent="Enemies" index="3" instance=ExtResource( 2 )]
+position = Vector2( 592, 416 )
+
+[node name="EnemyCharacter5" parent="Enemies" index="4" instance=ExtResource( 2 )]
+position = Vector2( 272, 496 )
+
+[node name="EnemyCharacter6" parent="Enemies" index="5" instance=ExtResource( 2 )]
+position = Vector2( 832, 192 )
+
+[node name="EnemyCharacter7" parent="Enemies" index="6" instance=ExtResource( 2 )]
+position = Vector2( 839, 456 )
