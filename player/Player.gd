@@ -19,3 +19,8 @@ func _process(delta):
 		attack(get_global_mouse_position())
 	
 	set_velocity(vx, vy)
+
+func _die():
+	print("die")
+	Global.gui.show_lose_menu()
+	._die()
