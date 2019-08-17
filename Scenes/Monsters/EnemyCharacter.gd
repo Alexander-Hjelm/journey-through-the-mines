@@ -17,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	# Character movement
-	if activated:
+	if activated and is_instance_valid(Global.player):
 		follow_and_attack_player()
 	else:
 		set_velocity(0,0)

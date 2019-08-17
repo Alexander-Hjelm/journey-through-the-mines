@@ -10,6 +10,11 @@ func _ready():
 	monster_count = $Enemies.get_child_count()
 
 
+func _input(event):
+	if Input.is_key_pressed(KEY_U):
+		get_tree().reload_current_scene()
+
+
 func check_enemy_amount():
 	monster_count -= 1
 	if monster_count <= 0:
