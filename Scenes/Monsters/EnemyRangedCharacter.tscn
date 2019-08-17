@@ -216,7 +216,7 @@ process_material = SubResource( 6 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.01, 0.01 )
+scale = Vector2( 0.07, 0.07 )
 frames = ExtResource( 4 )
 animation = "walkDown"
 

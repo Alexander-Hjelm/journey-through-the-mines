@@ -201,7 +201,7 @@ tag = "Enemy"
 speed = 30.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.01, 0.01 )
+scale = Vector2( 0.075, 0.075 )
 frames = ExtResource( 3 )
 animation = "idle"
 
