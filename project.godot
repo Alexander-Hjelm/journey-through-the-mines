@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="journey-through-the-mines"
-run/main_scene="res://Scenes/MainScene.tscn"
+run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -71,6 +71,13 @@ attack={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Terrain"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_5="Interaction"
 
 [rendering]
 

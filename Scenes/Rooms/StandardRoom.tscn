@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StandardRoom.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Placeholder/Dungeon Tileset.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Rooms/LevelExit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Rooms/LevelExitSide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Utilities/Exit_Scene.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Loot/Loot.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -86,3 +87,15 @@ polygon = PoolVector2Array( 0, -32, 16, -32, 16, 16, 0, 16 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExitSideRight"]
 position = Vector2( 24, 8 )
 shape = SubResource( 1 )
+
+[node name="GoldLoot" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 112 )
+
+[node name="GoldLoot2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 192, 64 )
+
+[node name="GoldLoot3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, 112 )
+
+[node name="GoldLoot4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 64, 128 )
