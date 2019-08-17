@@ -53,6 +53,5 @@ func _equip_item_to_actor(actor: Actor):
 func buy():
 	if Global.player_gold >= cost:
 		Global.player_gold -= cost
-		print(Global.player)
 		_equip_item_to_actor(Global.player)
 		queue_free()

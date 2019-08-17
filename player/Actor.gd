@@ -46,7 +46,7 @@ func set_velocity(vx, vy):
 	if _boots != null:
 		final_speed += _boots.speed
 	
-	set_linear_velocity(speed*Vector2(vx, vy).normalized())
+	set_linear_velocity(final_speed*Vector2(vx, vy).normalized())
 	
 	if vx < 0.0:
 		animated_sprite.flip_h = true
@@ -64,8 +64,8 @@ func attack(target_pos):
 		else:
 			projectile_instance = projectile.instance()
 		
-		add_child(projectile_instance)
-		projectile_instance.position = Vector2.ZERO
+		get_node("..").add_child(projectile_instance)
+		projectile_instance.position = position
 		projectile_instance.look_at(target_pos)
 		projectile_instance.set_tag(tag)
 		

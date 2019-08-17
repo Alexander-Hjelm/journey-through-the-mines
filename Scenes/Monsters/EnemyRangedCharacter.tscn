@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Monsters/EnemyCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/ArrowProjectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Monsters/Goblin/Goblin.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/GUI/HpBar.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Monsters/EnemyAnim.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Monsters/DeathParticles.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -54,6 +57,7 @@ frames = SubResource( 2 )
 animation = "walk"
 
 [node name="Control" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -73,3 +77,10 @@ max_value = 1.0
 percent_visible = false
 script = ExtResource( 4 )
 _actor_path = "../.."
+
+[node name="anim" parent="." instance=ExtResource( 5 )]
+
+[node name="MonsterSFX" parent="." instance=ExtResource( 6 )]
+
+[node name="DeathParticles" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2, 0 )
