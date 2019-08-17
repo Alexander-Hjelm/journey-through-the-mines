@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Monsters/EnemyCharacter.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/GUI/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Monsters/EnemyRangedCharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Monsters/EnemyMeleeCharacter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GUI/GUI.tscn" type="PackedScene" id=4]
 
 [node name="MainScene" type="Node2D"]
 
@@ -14,10 +15,13 @@ zoom = Vector2( 0.25, 0.25 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2, -1 )
 
-[node name="EnemyCharacter" parent="." instance=ExtResource( 2 )]
+[node name="EnemyCharacter2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 146.189, -27.3765 )
+
+[node name="EnemyCharacter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 138.974, 82.5394 )
 gravity_scale = 0.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 4 )]
