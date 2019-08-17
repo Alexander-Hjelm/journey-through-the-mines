@@ -1,8 +1,7 @@
 class_name Player extends Actor
 
-func _ready():
-	pass
-	#Global.player = self
+func _init():
+	Global.player = self
 
 func _process(delta):
 	# Character movement
