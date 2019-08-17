@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ground.png-ef1085849b2d7705c5b1a4b2522da040.stex"
+path="res://.import/item_box.png-8ee137f0aff1512c4d7d7a1817edd820.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Room Textures/Ground.png"
-dest_files=[ "res://.import/Ground.png-ef1085849b2d7705c5b1a4b2522da040.stex" ]
+source_file="res://GFX/Placeholder/item_box.png"
+dest_files=[ "res://.import/item_box.png-8ee137f0aff1512c4d7d7a1817edd820.stex" ]
 
 [params]
 
@@ -20,11 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
 flags/filter=false
-=======
-flags/filter=true
->>>>>>> d43d0536c819d672719b32b9b463e8134cc424d1
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -34,9 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-<<<<<<< HEAD
-detect_3d=false
-=======
 detect_3d=true
->>>>>>> d43d0536c819d672719b32b9b463e8134cc424d1
 svg/scale=1.0

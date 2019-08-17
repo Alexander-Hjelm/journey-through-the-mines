@@ -20,6 +20,7 @@ export(SLOT) var slot
 func _ready():
 	get_node("Sprite").texture = icon
 	get_node("Area2D").connect("body_entered", self, "_on_body_entered")
+	get_node("Control/Label").text = str(cost)
 
 func _on_body_entered(body: Node):
 	if body.get("tag") != null and body.tag == "Player":
@@ -45,10 +46,13 @@ func _create_weapon() -> Weapon:
 func _equip_item_to_actor(actor: Actor):
 	if slot == SLOT.Weapon:
 		actor.set_weapon(_create_weapon())
+		Global.gui.set_weapon_texture(icon)
 	if slot == SLOT.Armor:
 		actor.set_armor(_create_item())
+		Global.gui.set_armor_texture(icon)
 	if slot == SLOT.Boots:
 		actor.set_boots(_create_item())
+		Global.gui.set_boots_texture(icon)
 
 func buy():
 	if Global.player_gold >= cost:
