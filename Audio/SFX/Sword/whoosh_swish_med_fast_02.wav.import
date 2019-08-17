@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/whoosh_swish_med_fast_02.wav-4f5263098cb3930f3f3a559f132e61e0.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Sword/whoosh_swish_med_fast_02.wav"
+dest_files=[ "res://.import/whoosh_swish_med_fast_02.wav-4f5263098cb3930f3f3a559f132e61e0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0
