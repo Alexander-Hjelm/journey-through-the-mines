@@ -23,7 +23,7 @@ func set_velocity(vx, vy):
 	else:
 		animated_sprite.play("idle")
 	
-	set_linear_velocity(speed*Vector2(vx, vy))
+	set_linear_velocity(speed*Vector2(vx, vy).normalized())
 	
 	if vx < 0.0:
 		animated_sprite.flip_h = true
@@ -31,11 +31,17 @@ func set_velocity(vx, vy):
 		animated_sprite.flip_h = false
 	
 func attack(target_pos):
-	var projectile_instance = projectile.instance()
+	var projectile_instance : Projectile = projectile.instance()
 	add_child(projectile_instance)
 	projectile_instance.position = Vector2.ZERO
 	projectile_instance.look_at(target_pos)
+	projectile_instance.set_tag(tag)
+	projectile_instance.set_damage(dmg)
 	
-
 func apply_damage(dmg):
 	hp -= dmg
+	if hp <= 0:
+		_die()
+	
+func _die():
+	queue_free()
