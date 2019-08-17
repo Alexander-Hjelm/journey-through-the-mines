@@ -25,6 +25,11 @@ func set_velocity(vx, vy):
 	
 	set_linear_velocity(speed*Vector2(vx, vy))
 	
+	if vx < 0.0:
+		animated_sprite.flip_h = true
+	elif vx > 0.0:
+		animated_sprite.flip_h = false
+	
 func attack(target_pos):
 	var projectile_instance = projectile.instance()
 	add_child(projectile_instance)
