@@ -23,15 +23,19 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="Player" type="RigidBody2D"]
+collision_layer = 2
 mode = 2
 gravity_scale = 0.0
 script = ExtResource( 1 )
 projectile = ExtResource( 2 )
+tag = "Player"
+attack_interval = 0.2
 speed = 40.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
