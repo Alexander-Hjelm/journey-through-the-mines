@@ -1,6 +1,9 @@
 extends RigidBody2D
 class_name Actor # Needed for inheritance
 
+export(PackedScene) var projectile
+export(String) var tag
+
 export var speed = 1.0
 export var hp = 3.0
 export var dmg = 1.0
@@ -12,7 +15,7 @@ func _ready():
 	animated_sprite = get_node("AnimatedSprite")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _set_velocity(vx, vy):
+func set_velocity(vx, vy):
 	
 	# Animation
 	if abs(vx) > 0.0 || abs(vy) > 0.0:
@@ -22,8 +25,12 @@ func _set_velocity(vx, vy):
 	
 	set_linear_velocity(speed*Vector2(vx, vy))
 	
-func _attack(angle):
-	pass
+func attack(target_pos):
+	var projectile_instance = projectile.instance()
+	add_child(projectile_instance)
+	projectile_instance.position = Vector2.ZERO
+	projectile_instance.look_at(target_pos)
+	
 
-func _apply_damage(dmg):
+func apply_damage(dmg):
 	hp -= dmg
