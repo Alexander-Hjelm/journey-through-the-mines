@@ -6,10 +6,10 @@ export var activated = true
 export var knock_back = 250
 export var attack_proximity = 30.0
 export (PackedScene) var gold_loot = preload("res://Scenes/Loot/Loot.tscn")
-export (PackedScene) var health_loot = preload("res://Scenes/Loot/Loot.tscn")
+export (PackedScene) var health_loot = preload("res://Scenes/Loot/HPLoot.tscn")
 
 export var gold_loot_drop_chance = 0.75
-export var health_loot_drop_chance = 0.10
+export var health_loot_drop_chance = 0.1
 
 func _ready():
 	connect("monster_death", Global.room_node,"check_enemy_amount")

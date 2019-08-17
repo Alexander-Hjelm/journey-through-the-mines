@@ -51,7 +51,7 @@ icon = SubResource( 3 )
 projectile = ExtResource( 7 )
 
 [node name="ArmorContainer" parent="." instance=ExtResource( 5 )]
-position = Vector2( -35.1923, 32.6821 )
+position = Vector2( -33.1923, 32.6821 )
 damage = 2.0
 defense_modifier = 0.5
 speed = 20.0
