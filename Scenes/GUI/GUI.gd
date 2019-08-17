@@ -11,7 +11,7 @@ func _init():
 func _process(delta):
 	_hurt_overlay_alpha -= delta*3
 	_hurt_overlay_alpha = max(0, _hurt_overlay_alpha)
-	for child in get_node("HurtOverlay").get_children():
+	for child in get_node("HurtOverlay/CanvasLayer").get_children():
 		child.modulate = Color(1,1,1, _hurt_overlay_alpha)
 
 func set_hurt_overlay_alpha(alpha: float):
