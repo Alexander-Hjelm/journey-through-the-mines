@@ -29,9 +29,5 @@ func _on_body_entered(body: Node):
 		if body.get("tag") != null and body.tag == _tag:
 			return
 		body.apply_damage(_damage)
-		$HitSFX._play_random_sfx()
-		var hit_sfx = $HitSFX
-		remove_child(hit_sfx)
-		get_node("..").add_child(hit_sfx)
 		if _destroy_on_hit:
-			queue_free()
+			$Anim.play("on_hit_destroy")
