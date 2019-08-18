@@ -42,7 +42,7 @@ tile_data = PoolIntArray( 393279, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0
 position = Vector2( 417, 312 )
 
 [node name="EnemyMeleeBoss" parent="Enemies" index="0" instance=ExtResource( 2 )]
-position = Vector2( 370.904, 282.112 )
+position = Vector2( 386.162, 77.1151 )
 
 [node name="PlayerEntrancePos" parent="." index="8"]
 editor/display_folded = true

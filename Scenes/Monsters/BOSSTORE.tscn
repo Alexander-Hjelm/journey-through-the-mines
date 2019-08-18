@@ -29,10 +29,10 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=3]
 radius = 116.796
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "BossManEnters"
 length = 10.0
 tracks/0/type = "value"
@@ -84,7 +84,7 @@ tracks/3/keys = {
 "values": [ -32.4644, 2.44655, 2.44655, -14.3674, -25.8628, -24.6726, -24.6726 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -160,7 +160,7 @@ tracks/5/keys = {
 "values": [ 0.3 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "method"
 tracks/0/path = NodePath("MonsterSFX")
 tracks/0/interp = 1
@@ -212,8 +212,8 @@ tracks/3/keys = {
 "values": [ 0.2 ]
 }
 
-[sub_resource type="CircleShape2D" id=8]
-radius = 365.437
+[sub_resource type="CircleShape2D" id=7]
+radius = 98.0864
 
 [node name="EnemyMeleeBoss" type="RigidBody2D"]
 z_index = -1
@@ -230,7 +230,7 @@ attack_proximity = 40.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -1.93 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.05, 0.05 )
 frames = ExtResource( 3 )
 animation = "attack"
 
@@ -256,12 +256,12 @@ script = ExtResource( 4 )
 _actor_path = "../.."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/BossManEnters = SubResource( 7 )
-anims/death = SubResource( 4 )
-anims/hit = SubResource( 5 )
+anims/BossManEnters = SubResource( 4 )
+anims/death = SubResource( 5 )
+anims/hit = SubResource( 6 )
 
 [node name="MonsterSFX" parent="." instance=ExtResource( 5 )]
 sfx_1 = ExtResource( 6 )
@@ -280,13 +280,14 @@ scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 11 )
 
 [node name="Hand2" type="Sprite" parent="LeftHand"]
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 12 )
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="LeftHand"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHand/Area2D"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="RightHand" type="Node2D" parent="."]
 position = Vector2( 185.262, 93.8209 )
@@ -294,9 +295,10 @@ scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 11 )
 
 [node name="Hand1" type="Sprite" parent="RightHand"]
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 12 )
 
 [node name="Area2D" type="Area2D" parent="RightHand"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightHand/Area2D"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
