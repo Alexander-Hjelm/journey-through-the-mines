@@ -12,64 +12,8 @@
 [ext_resource path="res://DeathParticles.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Monsters/new_particlesmaterial.tres" type="Material" id=11]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.376471, 0.854902, 0, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.356863, 0.356863, 0.356863, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.741176, 0, 0, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.435294, 0.435294, 0.435294, 1 )
-
-[sub_resource type="CircleShape2D" id=6]
-radius = 27.3407
-
-[sub_resource type="Animation" id=4]
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.2091
 
 [node name="EnemyRangedBoss" type="RigidBody2D"]
 collision_layer = 4
@@ -85,7 +29,7 @@ attack_proximity = 400.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -1.93 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.1, 0.1 )
 frames = ExtResource( 3 )
 animation = "attack"
 
@@ -109,11 +53,10 @@ script = ExtResource( 4 )
 _actor_path = "../.."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.0188, 11.1131 )
-shape = SubResource( 6 )
+position = Vector2( 0.991088, -0.69203 )
+shape = SubResource( 1 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 1 )
 
 [node name="MonsterSFX" parent="." instance=ExtResource( 5 )]
 sfx_1 = ExtResource( 6 )
