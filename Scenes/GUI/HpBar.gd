@@ -1,13 +1,16 @@
 extends ProgressBar
 
 export(String) var _actor_path
+export(bool) var _player
 
 var _actor : Node
-var _max_hp : float
+var _max_hp : float = false
 
 func _ready():
-	_actor = get_node(_actor_path)
-	print(_actor)
+	if(_player):
+		_actor = Global.player
+	else:
+		_actor = get_node(_actor_path)
 	_max_hp = _actor.max_hp
 
 func _process(delta):
