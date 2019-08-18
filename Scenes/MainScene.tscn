@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ShakableCamera.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scenes/Items/ItemContainer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GFX/Placeholder/RPG Items/rpgItems.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Projectile/ArrowProjectile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Monsters/EnemyMeleeBoss.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Monsters/EnemyRangedBoss.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
@@ -69,3 +71,9 @@ speed = 20.0
 icon = SubResource( 3 )
 projectile = ExtResource( 8 )
 slot = 2
+
+[node name="EnemyMeleeBoss" parent="." instance=ExtResource( 9 )]
+position = Vector2( 200.937, 141.006 )
+
+[node name="EnemyRangedBoss" parent="." instance=ExtResource( 10 )]
+position = Vector2( 90.7653, 178.312 )

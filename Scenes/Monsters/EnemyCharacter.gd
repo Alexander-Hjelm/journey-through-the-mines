@@ -21,6 +21,7 @@ func _process(delta):
 		follow_and_attack_player()
 	else:
 		set_velocity(0,0)
+	print(name + " : " + str(position))
 
 
 func follow_and_attack_player():
@@ -34,12 +35,15 @@ func follow_and_attack_player():
 
 
 func apply_damage(dmg):
+	print("hp: " + str(hp))
+	print("hit: " + str(dmg))
 	.apply_damage(dmg)
 	if !is_dead and hp > 0:
 		$anim.play("hit")
 
 
 func _die():
+	print("Enemy.die")
 	emit_signal("monster_death")
 	randomize()
 	var random_gold_number = rand_range(0.0,1.0)

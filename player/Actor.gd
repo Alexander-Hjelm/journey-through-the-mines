@@ -15,7 +15,7 @@ export var damage = 1.0
 export var defense_modifier = 1.0
 
 var _last_attack_time : float
-var max_hp : float = hp
+var max_hp : float
 
 var _weapon : Weapon
 var _armor : Item
@@ -26,11 +26,13 @@ var animated_sprite
 
 var is_dead = false
 
+func _init():
+	max_hp = hp
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animated_sprite = get_node("AnimatedSprite")
 	_last_attack_time = Utils.get_time_seconds()
-	max_hp = hp
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func set_velocity(vx, vy):
@@ -109,6 +111,8 @@ func apply_damage(damage):
 	
 	var final_damage = damage * def_modifer
 	
+	print(final_damage)
+	
 	hp -= final_damage
 	
 	if(tag == "Player"):
@@ -116,10 +120,13 @@ func apply_damage(damage):
 	
 	Global.camera.shake(0.5, 100.0, 1.0)
 	
+	print(hp)
+	
 	if hp <= 0:
 		_die()
 	
 func _die():
+	print("die")
 	set_velocity(0.0,0.0)
 	is_dead = true
 	if has_create_deathFX_instance:
@@ -130,6 +137,7 @@ func _die():
 
 
 func hide_that_shit():
+	print("hide_that_shit()")
 	$AnimatedSprite.hide()
 	$CollisionShape2D.queue_free()
 

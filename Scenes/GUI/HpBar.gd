@@ -11,7 +11,7 @@ func _ready():
 		_actor = Global.player
 	else:
 		_actor = get_node(_actor_path)
-	_max_hp = _actor.max_hp
+	_max_hp = _actor.hp
 
 func _process(delta):
 	if is_instance_valid(_actor):

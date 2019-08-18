@@ -61,7 +61,7 @@ hue_variation = 0.08
 hue_variation_random = 1.0
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 7.78809
+radius = 21.7494
 
 [sub_resource type="Animation" id=9]
 tracks/0/type = "value"
@@ -191,18 +191,20 @@ tracks/3/keys = {
 "values": [ 0.2 ]
 }
 
-[node name="EnemyCharacter" type="RigidBody2D"]
+[node name="EnemyMeleeBoss" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 7
 mode = 2
 script = ExtResource( 1 )
 projectile = ExtResource( 2 )
 tag = "Enemy"
-speed = 30.0
-hp = 5.0
+speed = 20.0
+hp = 40.0
+damage = 2.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.075, 0.075 )
+position = Vector2( 0, -1.93 )
+scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 3 )
 animation = "attack"
 
@@ -215,10 +217,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -27.16
-margin_top = -31.59
-margin_right = 72.84
-margin_bottom = -11.59
+margin_left = -36.15
+margin_top = -49.43
+margin_right = 180.26
+margin_bottom = -21.4
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
@@ -248,3 +250,4 @@ sfx_2 = ExtResource( 8 )
 sfx_3 = ExtResource( 9 )
 
 [node name="StandardCharLight" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0.0944672, -0.188938 )
