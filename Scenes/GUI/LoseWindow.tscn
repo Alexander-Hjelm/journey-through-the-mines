@@ -3,11 +3,11 @@
 [ext_resource path="res://GFX/JMH Beda.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/GUI/RestartButton.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -20,7 +20,7 @@ margin_left = 304.603
 margin_top = 169.049
 margin_right = 718.603
 margin_bottom = 241.049
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "You have died..."
 
 [node name="Button" type="Button" parent="."]
@@ -28,6 +28,6 @@ margin_left = 406.026
 margin_top = 277.441
 margin_right = 588.026
 margin_bottom = 322.441
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Restart"
 script = ExtResource( 2 )

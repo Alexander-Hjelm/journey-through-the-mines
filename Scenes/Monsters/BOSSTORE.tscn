@@ -34,7 +34,56 @@ radius = 26.2568
 
 [sub_resource type="Animation" id=4]
 resource_name = "BossManEnters"
-length = 10.0
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1, 1.4, 1.9, 3, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -57.3859, 40.0714 ), Vector2( -99.4799, -13.8294 ), Vector2( -66.1127, 44.1782 ), Vector2( -69.7061, 3.11086 ), Vector2( -48.1458, 49.8249 ), Vector2( -60.9793, -0.995872 ), Vector2( -47.6324, 48.7983 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LeftHand:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1, 1.4, 1.9, 3, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2.21879, 2.21879, 2.21879, -25.4088, -25.4088, -25.4088, -25.4088 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RightHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.4, 2.4, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 74.3802, -2.68729 ), Vector2( 40.4997, 52.7536 ), Vector2( 71.3002, 20.4131 ), Vector2( 40.4997, 63.5338 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RightHand:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.4, 2.4, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 34.2292, 19.6884, 19.6884 ]
+}
 
 [sub_resource type="Animation" id=5]
 tracks/0/type = "method"
@@ -212,6 +261,7 @@ _actor_path = "../.."
 shape = SubResource( 3 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "BossManEnters"
 anims/BossManEnters = SubResource( 4 )
 anims/death = SubResource( 5 )
 anims/hit = SubResource( 6 )
@@ -243,7 +293,7 @@ flip_h = true
 shape = SubResource( 7 )
 
 [node name="RightHand" type="Node2D" parent="."]
-position = Vector2( 60.52, 37.3533 )
+position = Vector2( 74.3802, -2.68729 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 11 )
 
