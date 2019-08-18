@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/Utilities/SceneChanger.tscn" type="PackedScene" id=4]
 
 [node name="Room_1" index="0" instance=ExtResource( 1 )]
-editor/display_folded = true
 
 [node name="GroundTexture2" parent="." index="1"]
 margin_left = 464.0
@@ -28,6 +27,9 @@ position = Vector2( 417, 312 )
 
 [node name="EnemyCharacter" parent="Enemies" index="0" instance=ExtResource( 2 )]
 position = Vector2( 784, 312 )
+
+[node name="PlayerEntrancePos" parent="." index="8"]
+editor/display_folded = true
 
 [node name="Lighting" parent="." index="9"]
 color = Color( 0.137255, 0.137255, 0.137255, 1 )
