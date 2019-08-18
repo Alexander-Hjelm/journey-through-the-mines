@@ -27,13 +27,13 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "walkUp",
-"speed": 5.0
+"name": "walkSide",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "walkSide",
-"speed": 8.0
+"name": "walkUp",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,

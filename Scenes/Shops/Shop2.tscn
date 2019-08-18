@@ -25,26 +25,26 @@ region = Rect2( 96, 96, 16, 15 )
 [node name="SwordContainer" parent="." instance=ExtResource( 1 )]
 position = Vector2( -64.3012, 1.72631 )
 damage = 2.0
-cost = 60
+cost = 20
 icon = SubResource( 1 )
 projectile = ExtResource( 3 )
 
 [node name="ArmorContainer" parent="." instance=ExtResource( 1 )]
 position = Vector2( -23.6329, 1.72631 )
 defense_modifier = 0.5
-cost = 50
+cost = 18
 icon = SubResource( 2 )
 slot = 1
 
 [node name="BootsContainer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 16.1317, 1.04851 )
 speed = 40.0
-cost = 50
+cost = 25
 icon = SubResource( 3 )
 slot = 2
 
 [node name="BowContainer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56.3481, 1.50037 )
 damage = 0.5
-cost = 96
+cost = 28
 icon = SubResource( 4 )

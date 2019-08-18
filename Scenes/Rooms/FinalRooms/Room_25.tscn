@@ -1,19 +1,22 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StandardRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Rooms/LevelExitSide.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Utilities/SceneChanger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GFX/props/prop_skullpile.png" type="Texture" id=4]
-[ext_resource path="res://GFX/props/prop_stone1.png" type="Texture" id=5]
-[ext_resource path="res://GFX/props/prop_stone2.png" type="Texture" id=6]
-[ext_resource path="res://GFX/props/prop_stone3.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Monsters/EnemyMeleeCharacter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Monsters/EnemyRangedBoss.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Monsters/EnemyRangedCharacter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Utilities/SceneChanger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GFX/props/prop_skullpile.png" type="Texture" id=7]
+[ext_resource path="res://GFX/props/prop_stone1.png" type="Texture" id=8]
+[ext_resource path="res://GFX/props/prop_stone2.png" type="Texture" id=9]
+[ext_resource path="res://GFX/props/prop_stone3.png" type="Texture" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 172.804
 
-[node name="Room_1" instance=ExtResource( 1 )]
+[node name="Room_1" index="0" instance=ExtResource( 1 )]
 
 [node name="GroundTexture" parent="." index="0"]
 margin_left = 212.744
@@ -110,7 +113,49 @@ visible = true
 position = Vector2( 15.6753, 17.2249 )
 scale = Vector2( 0.96, 1 )
 
-[node name="SceneChanger" parent="." index="12" instance=ExtResource( 3 )]
+[node name="EnemyCharacter" parent="LevelExitSideLeft" index="5" instance=ExtResource( 3 )]
+position = Vector2( -101.332, 3.08286 )
+
+[node name="EnemyCharacter2" parent="LevelExitSideLeft" index="6" instance=ExtResource( 3 )]
+position = Vector2( -104.522, -44.9778 )
+
+[node name="EnemyCharacter3" parent="LevelExitSideLeft" index="7" instance=ExtResource( 3 )]
+position = Vector2( -77.6319, -63.0005 )
+
+[node name="EnemyCharacter4" parent="LevelExitSideLeft" index="8" instance=ExtResource( 3 )]
+position = Vector2( -102.244, 43.7224 )
+
+[node name="EnemyCharacter5" parent="LevelExitSideLeft" index="9" instance=ExtResource( 3 )]
+position = Vector2( -84.469, 71.9933 )
+
+[node name="EnemyCharacter6" parent="LevelExitSideLeft" index="10" instance=ExtResource( 3 )]
+position = Vector2( -51.1971, -84.2036 )
+
+[node name="EnemyCharacter7" parent="LevelExitSideLeft" index="11" instance=ExtResource( 3 )]
+position = Vector2( -53.021, 91.4297 )
+
+[node name="EnemyCharacter8" parent="LevelExitSideLeft" index="12" instance=ExtResource( 3 )]
+position = Vector2( -77.1759, -93.3917 )
+
+[node name="EnemyCharacter9" parent="LevelExitSideLeft" index="13" instance=ExtResource( 3 )]
+position = Vector2( -104.978, -76.0759 )
+
+[node name="EnemyCharacter10" parent="LevelExitSideLeft" index="14" instance=ExtResource( 3 )]
+position = Vector2( -105.434, 79.4144 )
+
+[node name="EnemyCharacter11" parent="LevelExitSideLeft" index="15" instance=ExtResource( 3 )]
+position = Vector2( -78.9999, 98.8508 )
+
+[node name="EnemyRangedBoss" parent="LevelExitSideLeft" index="16" instance=ExtResource( 4 )]
+position = Vector2( -144.175, 9.0903 )
+
+[node name="EnemyCharacter12" parent="LevelExitSideLeft" index="17" instance=ExtResource( 5 )]
+position = Vector2( -145.086, -37.2034 )
+
+[node name="EnemyCharacter13" parent="LevelExitSideLeft" index="18" instance=ExtResource( 5 )]
+position = Vector2( -140.984, 51.8502 )
+
+[node name="SceneChanger" parent="." index="12" instance=ExtResource( 6 )]
 
 [node name="Visual" type="Node2D" parent="." index="13"]
 
@@ -118,7 +163,7 @@ scale = Vector2( 0.96, 1 )
 material = SubResource( 1 )
 position = Vector2( 368.091, 316.165 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile" index="0"]
 
@@ -129,7 +174,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 235.621, 381.092 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile9" index="0"]
 
@@ -140,7 +185,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 464.067, 265.403 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile5" index="0"]
 
@@ -151,7 +196,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 594.441, 403.82 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile2" index="0"]
 
@@ -162,7 +207,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 249.279, 235.388 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile10" index="0"]
 
@@ -173,7 +218,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 250.508, 390.604 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile11" index="0"]
 
@@ -184,7 +229,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 235.221, 403.265 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile3" index="0"]
 
@@ -195,7 +240,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 596.673, 382.058 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile7" index="0"]
 
@@ -206,7 +251,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 258.831, 213.317 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile6" index="0"]
 
@@ -217,7 +262,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 572.027, 404.485 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile8" index="0"]
 
@@ -228,7 +273,7 @@ shape = SubResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 237.44, 216.027 )
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual/prop_skullpile4" index="0"]
 
