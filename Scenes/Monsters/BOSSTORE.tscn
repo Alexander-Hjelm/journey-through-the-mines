@@ -30,59 +30,11 @@ border_width_bottom = 2
 border_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 116.796
+radius = 26.2568
 
 [sub_resource type="Animation" id=4]
 resource_name = "BossManEnters"
 length = 10.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("RightHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 4.2, 6.1, 6.6, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 185.262, 93.8209 ), Vector2( 224.223, 162.002 ), Vector2( 218.379, 177.586 ), Vector2( 224.223, 154.209 ), Vector2( 228.324, 178.816 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("RightHand:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 4.2, 6.1, 6.6, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 36.6136, 19.6587, 27.6749 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("LeftHand:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2.7, 3.6, 5, 5.8, 8.1, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -186.748, 117.586 ), Vector2( -238.012, 133.991 ), Vector2( -244.163, 234.468 ), Vector2( -223.658, 170.901 ), Vector2( -274.922, 140.142 ), Vector2( -233.911, 170.901 ), Vector2( -244.163, 152.446 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("LeftHand:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 2.7, 3.6, 5, 5.8, 8.1, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ -32.4644, 2.44655, 2.44655, -14.3674, -25.8628, -24.6726, -24.6726 ]
-}
 
 [sub_resource type="Animation" id=5]
 tracks/0/type = "method"
@@ -216,7 +168,7 @@ tracks/3/keys = {
 radius = 98.0864
 
 [node name="EnemyMeleeBoss" type="RigidBody2D"]
-z_index = -1
+z_index = 100
 collision_layer = 4
 collision_mask = 7
 mode = 2
@@ -231,6 +183,7 @@ attack_proximity = 40.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -1.93 )
 scale = Vector2( 0.05, 0.05 )
+z_index = 100
 frames = ExtResource( 3 )
 animation = "attack"
 
@@ -274,8 +227,8 @@ position = Vector2( 0.0944672, -0.188938 )
 [node name="DeathParticles" parent="." instance=ExtResource( 10 )]
 
 [node name="LeftHand" type="Node2D" parent="."]
-position = Vector2( -186.748, 117.586 )
-rotation = -0.56661
+position = Vector2( -57.3859, 40.0714 )
+rotation = 0.0387252
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 11 )
 
@@ -290,7 +243,7 @@ flip_h = true
 shape = SubResource( 7 )
 
 [node name="RightHand" type="Node2D" parent="."]
-position = Vector2( 185.262, 93.8209 )
+position = Vector2( 60.52, 37.3533 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 11 )
 
