@@ -7,11 +7,14 @@ onready var black = $Control/Black
 
 func change_scene(path, delay = 0.5):
 	yield(get_tree().create_timer(delay), "timeout")
-	anim.play("fade")
-	yield(anim, "animation_finished")
+	print(anim)
+	print($AnimationPlayer)
+	print(get_node("AnimationPlayer"))
+	#anim.play("fade")
+	#yield(anim, "animation_finished")
 	assert(get_tree().change_scene(path) == OK)
-	anim.play_backwards("fade")
-	yield(anim, "animation_finished")
+	#anim.play_backwards("fade")
+	#yield(anim, "animation_finished")
 	emit_signal("scene_changed")
 
 

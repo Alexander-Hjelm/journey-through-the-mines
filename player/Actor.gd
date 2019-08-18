@@ -111,8 +111,6 @@ func apply_damage(damage):
 	
 	var final_damage = damage * def_modifer
 	
-	print(final_damage)
-	
 	hp -= final_damage
 	
 	if(tag == "Player"):
@@ -120,13 +118,10 @@ func apply_damage(damage):
 	
 	Global.camera.shake(0.5, 100.0, 1.0)
 	
-	print(hp)
-	
 	if hp <= 0:
 		_die()
 	
 func _die():
-	print("die")
 	set_velocity(0.0,0.0)
 	is_dead = true
 	if has_create_deathFX_instance:
@@ -137,7 +132,6 @@ func _die():
 
 
 func hide_that_shit():
-	print("hide_that_shit()")
 	$AnimatedSprite.hide()
 	$CollisionShape2D.queue_free()
 
