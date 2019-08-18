@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TheLongHaulThroughTheMinesNormalised.ogg-6f1ebd4361514d22e4c3bed8c2c45c7f.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/TheLongHaulThroughTheMinesNormalised.ogg"
+dest_files=[ "res://.import/TheLongHaulThroughTheMinesNormalised.ogg-6f1ebd4361514d22e4c3bed8c2c45c7f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
