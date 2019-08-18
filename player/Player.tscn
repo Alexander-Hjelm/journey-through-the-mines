@@ -5,18 +5,18 @@
 [ext_resource path="res://Scenes/Monsters/PlayerDeathParticlesWithSFX.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GFX/Dwarf/dwarf_down_idle1.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Dwarf/dwarf_down_idle2.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Dwarf/dwarf_up_walk1.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Dwarf/dwarf_up_walk2.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Dwarf/dwarf_up_walk3.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Dwarf/dwarf_up_walk4.png" type="Texture" id=9]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk1.png" type="Texture" id=10]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk2.png" type="Texture" id=11]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk3.png" type="Texture" id=12]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk4.png" type="Texture" id=13]
-[ext_resource path="res://GFX/Dwarf/dwarf_side_walk1.png" type="Texture" id=14]
-[ext_resource path="res://GFX/Dwarf/dwarf_side_walk2.png" type="Texture" id=15]
-[ext_resource path="res://GFX/Dwarf/dwarf_side_walk3.png" type="Texture" id=16]
-[ext_resource path="res://GFX/Dwarf/dwarf_side_walk4.png" type="Texture" id=17]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk1.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk2.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk3.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk4.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk1.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk2.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk3.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk4.png" type="Texture" id=13]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk1.png" type="Texture" id=14]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk2.png" type="Texture" id=15]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk3.png" type="Texture" id=16]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk4.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_01.wav" type="AudioStream" id=19]
 [ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_02.wav" type="AudioStream" id=20]
@@ -35,17 +35,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "walkUp",
+"name": "walkDown",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "walkDown",
+"name": "walkSide",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "walkSide",
+"name": "walkUp",
 "speed": 12.0
 } ]
 
@@ -69,6 +69,7 @@ speed = 40.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
+z_index = 1
 frames = SubResource( 1 )
 animation = "walkSide"
 frame = 2
@@ -89,7 +90,7 @@ random_sfx_to_play = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.25, 0.25 )
 limit_left = 0
 limit_top = 0
 limit_right = 1024
@@ -99,5 +100,6 @@ script = ExtResource( 24 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 25 )]
+editor/display_folded = true
 
 [editable path="CanvasLayer/GUI"]
