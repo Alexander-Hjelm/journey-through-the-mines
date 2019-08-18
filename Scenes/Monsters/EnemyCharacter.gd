@@ -57,3 +57,5 @@ func _die():
 	activated = false
 	is_dead = true
 	$anim.play("death")
+	
+	hide_that_shit()

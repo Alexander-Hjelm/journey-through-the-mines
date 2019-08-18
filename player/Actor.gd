@@ -134,7 +134,8 @@ func _die():
 func hide_that_shit():
 	$AnimatedSprite.hide()
 	$CollisionShape2D.queue_free()
-
+	if has_node("Control"):
+		get_node("Control").queue_free()
 
 func set_armor(armor : Item):
 	_armor = armor
