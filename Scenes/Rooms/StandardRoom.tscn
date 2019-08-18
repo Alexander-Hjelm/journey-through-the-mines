@@ -160,6 +160,7 @@ speed = 80.0
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="PlayerEntrancePos" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="East" type="Position2D" parent="PlayerEntrancePos"]
 position = Vector2( 992, 312 )
@@ -189,6 +190,7 @@ position = Vector2( 80, 544 )
 color = Color( 0.678431, 0.678431, 0.678431, 1 )
 
 [node name="LightingNodes" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Light2D" type="Light2D" parent="LightingNodes"]
 position = Vector2( 80, 80 )

@@ -94,6 +94,7 @@ script = ExtResource( 1 )
 projectile = ExtResource( 2 )
 tag = "Enemy"
 speed = 25.0
+attack_proximity = 180.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.075, 0.075 )

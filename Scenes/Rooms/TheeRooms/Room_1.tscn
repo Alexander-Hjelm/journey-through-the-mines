@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Rooms/LevelExitSide.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Utilities/SceneChanger.tscn" type="PackedScene" id=4]
 
-[node name="Room_1" index="0" instance=ExtResource( 1 )]
+[node name="Room_1" instance=ExtResource( 1 )]
 
 [node name="GroundTexture2" parent="." index="1"]
 margin_left = 464.0
@@ -56,7 +56,6 @@ position = Vector2( 992, 312 )
 position = Vector2( 128, 208 )
 
 [node name="LevelExitSideLeft" parent="." index="11" instance=ExtResource( 3 )]
-editor/display_folded = true
 position = Vector2( 992, 304 )
 scene_change = "res://Scenes/Rooms/TheeRooms/Room_2.tscn"
 entrance_id = "West"
