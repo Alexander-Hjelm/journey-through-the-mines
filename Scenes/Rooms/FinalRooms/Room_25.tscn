@@ -14,7 +14,7 @@
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 172.804
 
-[node name="Room_1" index="0" instance=ExtResource( 1 )]
+[node name="Room_1" instance=ExtResource( 1 )]
 
 [node name="GroundTexture" parent="." index="0"]
 margin_left = 212.744
