@@ -160,7 +160,6 @@ speed = 80.0
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="PlayerEntrancePos" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="East" type="Position2D" parent="PlayerEntrancePos"]
 position = Vector2( 992, 312 )

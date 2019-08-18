@@ -9,9 +9,11 @@ var _max_hp : float = false
 func _ready():
 	if(_player):
 		_actor = Global.player
+		_max_hp = Global.player_max_health
 	else:
 		_actor = get_node(_actor_path)
-	_max_hp = _actor.hp
+		_max_hp = _actor.hp
+	
 
 func _process(delta):
 	if is_instance_valid(_actor):

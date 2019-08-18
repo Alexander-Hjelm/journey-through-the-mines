@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Utilities/SceneChanger.tscn" type="PackedScene" id=4]
 
 [node name="Room_1" index="0" instance=ExtResource( 1 )]
+editor/display_folded = true
 
 [node name="GroundTexture2" parent="." index="1"]
 margin_left = 464.0

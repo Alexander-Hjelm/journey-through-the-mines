@@ -2,6 +2,9 @@ class_name Player extends Actor
 
 func _init():
 	Global.player = self
+	Global.player_max_health = hp
+	if Global.player_health != 0:
+		hp = Global.player_health
 
 func _process(delta):
 	# Character movement
@@ -20,6 +23,7 @@ func _process(delta):
 			attack(get_global_mouse_position())
 		
 		set_velocity(vx, vy)
+		Global.player_health = hp
 
 func _die():
 	print("die")
