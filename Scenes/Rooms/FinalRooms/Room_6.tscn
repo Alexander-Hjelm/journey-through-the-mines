@@ -99,7 +99,7 @@ editor/display_folded = true
 position = Vector2( 403.936, 224.836 )
 rotation = -1.5708
 scale = Vector2( 1.07, 1.38 )
-scene_change = "res://Scenes/Rooms/FinalRooms/Room_7.tscn"
+scene_change = "res://Scenes/Rooms/FinalRooms/Room_8.tscn"
 entrance_id = "South"
 
 [node name="DoorOpen" parent="LevelExitSideLeft" index="0"]
@@ -112,7 +112,7 @@ editor/display_folded = true
 position = Vector2( 404.1, 450 )
 rotation = -1.5708
 scale = Vector2( 1.07, 1.38 )
-scene_change = "res://Scenes/Rooms/FinalRooms/Room_3.tscn"
+scene_change = "res://Scenes/Rooms/FinalRooms/Room_4.tscn"
 entrance_id = "North"
 
 [node name="SceneChanger" parent="." index="13" instance=ExtResource( 3 )]

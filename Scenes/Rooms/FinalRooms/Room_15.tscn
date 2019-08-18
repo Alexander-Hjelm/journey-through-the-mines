@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StandardRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Rooms/LevelExitSide.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://GFX/props/prop_stone1.png" type="Texture" id=5]
 [ext_resource path="res://GFX/props/prop_stone2.png" type="Texture" id=6]
 [ext_resource path="res://GFX/props/prop_stone3.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Shops/Shop1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -36,22 +35,25 @@ margin_bottom = 2336.0
 zoom = Vector2( 1, 1 )
 
 [node name="Front" parent="." index="5"]
-tile_data = PoolIntArray( 393279, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0, 786460, 1, 0, 786461, 1, 0, 786462, 1, 0, 786463, 1, 0, 786464, 1, 0, 786465, 1, 0, 786466, 1, 0, 786467, 1, 0, 786468, 1, 0, 786469, 1, 0, 786470, 1, 0, 851981, 1, 0, 852006, 1, 0, 917517, 1, 0, 917526, 4, 0, 917532, 4, 0, 917542, 1, 0, 983053, 1, 0, 983078, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048614, 1, 0, 1048615, 1, 0, 1114124, 1, 0, 1114134, 4, 0, 1114140, 4, 0, 1114151, 1, 0, 1179660, 1, 0, 1179687, 1, 0, 1245196, 1, 0, 1245223, 1, 0, 1310732, 1, 0, 1310759, 1, 0, 1376268, 1, 0, 1376269, 1, 0, 1376294, 1, 0, 1376295, 1, 0, 1441805, 1, 0, 1441810, 3, 0, 1441830, 1, 0, 1507341, 1, 0, 1507345, 3, 0, 1507347, 3, 0, 1507360, 3, 0, 1507361, 3, 0, 1507366, 1, 0, 1572877, 1, 0, 1572902, 1, 0, 1638413, 1, 0, 1638438, 1, 0, 1703949, 1, 0, 1703950, 1, 0, 1703951, 1, 0, 1703952, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1703959, 1, 0, 1703960, 1, 0, 1703961, 1, 0, 1703962, 1, 0, 1703963, 1, 0, 1703964, 1, 0, 1703965, 1, 0, 1703966, 1, 0, 1703967, 1, 0, 1703968, 1, 0, 1703969, 1, 0, 1703970, 1, 0, 1703971, 1, 0, 1703972, 1, 0, 1703973, 1, 0, 1703974, 1, 0, 2031679, 1, 0 )
+tile_data = PoolIntArray( 393279, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0, 786460, 1, 0, 786461, 1, 0, 786462, 1, 0, 786463, 1, 0, 786464, 1, 0, 786465, 1, 0, 786466, 1, 0, 786467, 1, 0, 786468, 1, 0, 786469, 1, 0, 786470, 1, 0, 851981, 1, 0, 852006, 1, 0, 917517, 1, 0, 917526, 4, 0, 917532, 4, 0, 917542, 1, 0, 983053, 1, 0, 983078, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048614, 1, 0, 1114124, 1, 0, 1114134, 4, 0, 1114140, 4, 0, 1114150, 1, 0, 1179660, 1, 0, 1179686, 1, 0, 1245196, 1, 0, 1245222, 1, 0, 1310732, 1, 0, 1310758, 1, 0, 1376268, 1, 0, 1376269, 1, 0, 1376294, 1, 0, 1441805, 1, 0, 1441810, 3, 0, 1441830, 1, 0, 1507341, 1, 0, 1507345, 3, 0, 1507347, 3, 0, 1507360, 3, 0, 1507361, 3, 0, 1507366, 1, 0, 1572877, 1, 0, 1572902, 1, 0, 1638413, 1, 0, 1638438, 1, 0, 1703949, 1, 0, 1703950, 1, 0, 1703951, 1, 0, 1703952, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1703959, 1, 0, 1703964, 1, 0, 1703965, 1, 0, 1703966, 1, 0, 1703967, 1, 0, 1703968, 1, 0, 1703969, 1, 0, 1703970, 1, 0, 1703971, 1, 0, 1703972, 1, 0, 1703973, 1, 0, 1703974, 1, 0, 1769495, 1, 0, 1769496, 1, 0, 1769497, 1, 0, 1769498, 1, 0, 1769499, 1, 0, 1769500, 1, 0, 2031679, 1, 0 )
 
 [node name="Player" parent="." index="6"]
 position = Vector2( 417, 312 )
 
+[node name="PlayerEntrancePos" parent="." index="8"]
+editor/display_folded = true
+
 [node name="East" parent="PlayerEntrancePos" index="0"]
-position = Vector2( 596.325, 306.703 )
+position = Vector2( 598.834, 312.975 )
 
 [node name="South" parent="PlayerEntrancePos" index="1"]
-position = Vector2( 414, 408 )
+position = Vector2( 414.488, 405.074 )
 
 [node name="West" parent="PlayerEntrancePos" index="2"]
-position = Vector2( 235.272, 308.038 )
+position = Vector2( 235.811, 304.653 )
 
 [node name="North" parent="PlayerEntrancePos" index="3"]
-position = Vector2( 412.582, 219.836 )
+position = Vector2( 413, 219 )
 
 [node name="NorthWest" parent="PlayerEntrancePos" index="4"]
 position = Vector2( 230, 218 )
@@ -67,9 +69,6 @@ position = Vector2( 229, 414 )
 
 [node name="Lighting" parent="." index="9"]
 color = Color( 0.137255, 0.137255, 0.137255, 1 )
-
-[node name="LightingNodes" parent="." index="10"]
-editor/display_folded = false
 
 [node name="Light2D" parent="LightingNodes" index="0"]
 visible = false
@@ -97,29 +96,30 @@ position = Vector2( 415.85, 232.85 )
 
 [node name="LevelExitSideLeft" parent="." index="11" instance=ExtResource( 2 )]
 editor/display_folded = true
-position = Vector2( 404.1, 226.117 )
+position = Vector2( 404.1, 450 )
 rotation = -1.5708
 scale = Vector2( 1.07, 1.38 )
-scene_change = "res://Scenes/Rooms/FinalRooms/Room_10.tscn"
-entrance_id = "South"
+scene_change = "res://Scenes/Rooms/FinalRooms/Room_13.tscn"
+entrance_id = "North"
 
 [node name="DoorOpen" parent="LevelExitSideLeft" index="0"]
 visible = true
 position = Vector2( 15.6753, 17.2249 )
 scale = Vector2( 0.96, 1 )
 
-[node name="LevelExitSideLeft2" parent="." index="12" instance=ExtResource( 2 )]
+[node name="LevelExitSideLeft3" parent="." index="12" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 406.301, 225.976 )
+rotation = -1.5708
+scale = Vector2( 1.07, 1.38 )
+scene_change = "res://Scenes/Rooms/FinalRooms/Room_17.tscn"
+entrance_id = "South"
+
+[node name="LevelExitSideLeft2" parent="." index="13" instance=ExtResource( 2 )]
 editor/display_folded = true
 position = Vector2( 190, 293.178 )
 scale = Vector2( 1.07, 1.38 )
-scene_change = "res://Scenes/Rooms/FinalRooms/Room_7.tscn"
-entrance_id = "East"
-
-[node name="LevelExitSideLeft3" parent="." index="13" instance=ExtResource( 2 )]
-editor/display_folded = true
-position = Vector2( 590, 293.178 )
-scale = Vector2( 1.07, 1.38 )
-scene_change = "res://Scenes/Rooms/FinalRooms/Room_8.tscn"
+scene_change = "res://Scenes/Rooms/FinalRooms/Room_16.tscn"
 entrance_id = "East"
 
 [node name="SceneChanger" parent="." index="14" instance=ExtResource( 3 )]
@@ -247,8 +247,5 @@ texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visual/prop_skullpile4/StaticBody2D" index="0"]
 shape = SubResource( 2 )
-
-[node name="Shop1" parent="." index="16" instance=ExtResource( 8 )]
-position = Vector2( 419.002, 312.156 )
 
 [editable path="LevelExitSideLeft"]

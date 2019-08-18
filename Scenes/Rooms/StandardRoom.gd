@@ -7,7 +7,7 @@ func _init():
 
 
 func _ready():
-	monster_count = $Enemies.get_child_count()
+	monster_count = $Enemies.get_child_count() + 1
 	set_player_entrance_position()
 	check_enemy_amount()
 

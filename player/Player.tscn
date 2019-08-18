@@ -72,7 +72,7 @@ scale = Vector2( 0.1, 0.1 )
 z_index = 1
 frames = SubResource( 1 )
 animation = "walkSide"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
