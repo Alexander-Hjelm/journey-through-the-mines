@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ShakableCamera.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Projectile/ArrowProjectile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Monsters/EnemyMeleeBoss.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Monsters/EnemyRangedBoss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Shops/Shop1.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
@@ -77,3 +78,6 @@ position = Vector2( 200.937, 141.006 )
 
 [node name="EnemyRangedBoss" parent="." instance=ExtResource( 10 )]
 position = Vector2( 90.7653, 178.312 )
+
+[node name="Node2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 102.535, 264.223 )
