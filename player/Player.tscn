@@ -1,22 +1,30 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile/PlayerSlash.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Monsters/PlayerDeathParticlesWithSFX.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GFX/Dwarf/dwarf_down_idle1.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Dwarf/dwarf_down_idle2.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk1.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk2.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk3.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Dwarf/dwarf_down_walk4.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_01.wav" type="AudioStream" id=11]
-[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_02.wav" type="AudioStream" id=12]
-[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_03.wav" type="AudioStream" id=13]
-[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_04.wav" type="AudioStream" id=14]
-[ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=15]
-[ext_resource path="res://ShakableCamera.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/GUI/GUI.tscn" type="PackedScene" id=17]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk1.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk2.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk3.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Dwarf/dwarf_up_walk4.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk1.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk2.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk3.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Dwarf/dwarf_down_walk4.png" type="Texture" id=13]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk1.png" type="Texture" id=14]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk2.png" type="Texture" id=15]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk3.png" type="Texture" id=16]
+[ext_resource path="res://GFX/Dwarf/dwarf_side_walk4.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_01.wav" type="AudioStream" id=19]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_02.wav" type="AudioStream" id=20]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_03.wav" type="AudioStream" id=21]
+[ext_resource path="res://Audio/SFX/Sword/whoosh_swish_med_fast_04.wav" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=23]
+[ext_resource path="res://ShakableCamera.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/GUI/GUI.tscn" type="PackedScene" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,7 +35,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "walk",
+"name": "walkUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walkDown",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "walkSide",
 "speed": 12.0
 } ]
 
@@ -52,7 +70,7 @@ speed = 40.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
-animation = "walkDown"
+animation = "walkSide"
 frame = 1
 playing = true
 
@@ -60,14 +78,14 @@ playing = true
 position = Vector2( 0, 1.67478 )
 shape = SubResource( 2 )
 
-[node name="SwordSFX" parent="." instance=ExtResource( 10 )]
-sfx_1 = ExtResource( 11 )
-sfx_2 = ExtResource( 12 )
-sfx_3 = ExtResource( 13 )
-sfx_4 = ExtResource( 14 )
+[node name="SwordSFX" parent="." instance=ExtResource( 18 )]
+sfx_1 = ExtResource( 19 )
+sfx_2 = ExtResource( 20 )
+sfx_3 = ExtResource( 21 )
+sfx_4 = ExtResource( 22 )
 random_sfx_to_play = 4
 
-[node name="StandardCharLight" parent="." instance=ExtResource( 15 )]
+[node name="StandardCharLight" parent="." instance=ExtResource( 23 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -76,10 +94,10 @@ limit_left = 0
 limit_top = 0
 limit_right = 1024
 limit_bottom = 1024
-script = ExtResource( 16 )
+script = ExtResource( 24 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="CanvasLayer" instance=ExtResource( 17 )]
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 25 )]
 
 [editable path="CanvasLayer/GUI"]
