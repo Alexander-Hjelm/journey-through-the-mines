@@ -5,11 +5,11 @@
 [node name="EnemySlash" instance=ExtResource( 1 )]
 
 [node name="AnimatedSprite" parent="." index="0"]
-position = Vector2( 18.0163, 0.427185 )
+position = Vector2( 24.9752, 0.659149 )
 
 [node name="Area2D" parent="." index="1"]
 collision_layer = 64
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 19.8329, 0.115982 )
+position = Vector2( 27.0238, 0.463928 )
