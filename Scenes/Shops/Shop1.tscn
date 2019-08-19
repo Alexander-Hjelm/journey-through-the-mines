@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Items/ItemContainer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GFX/Placeholder/RPG Items/rpgItems.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Projectile/PlayerSlash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Projectile/ArrowProjectile.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -47,3 +48,4 @@ slot = 2
 position = Vector2( 56.3481, 1.50037 )
 cost = 15
 icon = SubResource( 4 )
+projectile = ExtResource( 4 )

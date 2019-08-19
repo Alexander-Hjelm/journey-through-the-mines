@@ -5,6 +5,12 @@ func _init():
 	Global.player_max_health = hp
 	if Global.player_health != 0:
 		hp = Global.player_health
+	if Global.player_weapon != null:
+		_weapon = Global.player_weapon
+	if Global.player_armor != null:
+		_armor = Global.player_armor
+	if Global.player_boots != null:
+		_boots = Global.player_boots
 
 func _process(delta):
 	# Character movement
@@ -29,3 +35,15 @@ func _die():
 	print("die")
 	Global.gui.show_lose_menu()
 	._die()
+
+func set_armor(armor : Item):
+	.set_armor(armor)
+	Global.player_armor = armor
+
+func set_boots(boots : Item):
+	.set_boots(boots)
+	Global.player_boots = boots
+
+func set_weapon(weapon : Weapon):
+	.set_weapon(weapon)
+	Global.player_weapon = weapon

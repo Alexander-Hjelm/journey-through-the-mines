@@ -16,6 +16,9 @@ func _ready():
 	
 
 func _process(delta):
-	if is_instance_valid(_actor):
-		var hp = _actor.hp
-		value = (hp/_max_hp)
+	var hp
+	if(_player):
+		hp = Global.player.hp
+	elif is_instance_valid(_actor):
+		hp = _actor.hp
+	value = (hp/_max_hp)

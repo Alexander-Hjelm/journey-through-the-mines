@@ -8,6 +8,14 @@ var _hurt_overlay_alpha = 0
 func _init():
 	Global.gui = self
 
+func _ready():
+	if Global.player_weapon != null:
+		set_weapon_texture(Global.player_weapon.icon)
+	if Global.player_armor != null:
+		set_armor_texture(Global.player_armor.icon)
+	if Global.player_boots != null:
+		set_boots_texture(Global.player_boots.icon)
+
 func _process(delta):
 	_hurt_overlay_alpha -= delta*3
 	_hurt_overlay_alpha = max(0, _hurt_overlay_alpha)
