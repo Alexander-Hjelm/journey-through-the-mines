@@ -9,8 +9,9 @@
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_02.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_03.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=9]
-[ext_resource path="res://DeathParticles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/DeathParticles.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Monsters/new_particlesmaterial.tres" type="Material" id=11]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.2091

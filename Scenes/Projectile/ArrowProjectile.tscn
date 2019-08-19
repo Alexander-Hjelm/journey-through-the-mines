@@ -1,11 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Projectile/ArrowProjectile.gd" type="Script" id=1]
-[ext_resource path="res://arrow.png" type="Texture" id=2]
+[ext_resource path="res://GFX/arrow.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Audio/RandomSFX.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Audio/SFX/Sword/sword_hit_impact_heavy_01.wav" type="AudioStream" id=4]
 [ext_resource path="res://Audio/SFX/Sword/sword_hit_impact_heavy_02.wav" type="AudioStream" id=5]
 [ext_resource path="res://Audio/SFX/Sword/sword_hit_impact_heavy_03.wav" type="AudioStream" id=6]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.91403, 1.31161 )

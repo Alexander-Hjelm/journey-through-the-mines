@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://ShakableCamera.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ShakableCamera.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Monsters/EnemyRangedCharacter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Monsters/EnemyMeleeCharacter.tscn" type="PackedScene" id=4]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Monsters/EnemyMeleeBoss.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Monsters/EnemyRangedBoss.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Shops/Shop1.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )

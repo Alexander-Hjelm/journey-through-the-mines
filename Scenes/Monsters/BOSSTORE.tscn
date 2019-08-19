@@ -9,9 +9,10 @@
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_02.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Voice/zombie_voice_groan_croak_03.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/Lights/StandardCharLight.tscn" type="PackedScene" id=9]
-[ext_resource path="res://DeathParticles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/DeathParticles.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Projectile/Projectile.gd" type="Script" id=11]
 [ext_resource path="res://GFX/Boss/tores_hand.png" type="Texture" id=12]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.364706, 0.956863, 0, 1 )
